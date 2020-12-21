@@ -9,13 +9,26 @@ public class HouseCat extends Cat {
         name = aName;
     }
 
+    //additional constructors
+    public HouseCat(String name) {
+        this.name = name;
+    }
+
+    public HouseCat(double aWeight) { //bad example of constructor,
+        super(aWeight);              //doesn't initialize essential field, NAME
+    }
+
     public boolean isSatisfied() {
         return !isHungry() && !isTired();
     }
 
     @Override
     public String noise() {
-        return "Hello, my name is " + name + "!";
+        if(isSatisfied()) {return "Hello, my name is " + name + "!";
+        } else {
+            return "Hrrrumph";
+        }
+//        return noise();
     }
 
     public String purr() {

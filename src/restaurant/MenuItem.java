@@ -4,19 +4,19 @@ package restaurant;
 
 public class MenuItem {
 
-    public String name;
-    private float price;
+    private String name;
+    private double price;
     private String description;
     private String category;
     private Boolean is_new;
 
 
-    public MenuItem(String name, float price, String description, String category, Boolean is_new) {
+    public MenuItem(String name, double price, String description, String category) {
         this.name = name;
         this.price = price;
         this.description = description;
         this.category = category;
-        this.is_new = is_new;
+//        this.is_new = is_new;
     }
 
     public String getName() {
@@ -31,7 +31,7 @@ public class MenuItem {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -55,13 +55,17 @@ public class MenuItem {
         this.is_new = is_new;
     }
 
-    public String getIs_new() {
-        String x = "";
-        if (is_new) {
-            x = this.name + "is a new menu item!";
-        }
-        return x;
-    }
+//    public String toString() {
+//        return this.name + " Price: " + this.price + " " + this.description + " Category: " + this.category;
+//    }
+
+//    public String getIs_new() {
+//        String x = "";
+//        if (is_new) {
+//            x = this.name + "is a new menu item!";
+//        }
+//        return x;
+//    }
 
 //    @Override
 //    public String toString() {
@@ -74,7 +78,7 @@ public class MenuItem {
 //    }
 
     public String toString() {
-        return this.name + " (" + this.category + "):" + this.description + " " + "$" + this.price + getIs_new();
+        return this.name + " (" + this.category + "):" + this.description + " " + "$" + this.price;
     }
 
 
